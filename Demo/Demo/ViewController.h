@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "QuickNavigationBarVC.h"
+#import "UINavigationBar+QuickCreate.h"
 
 @interface ViewController : QuickNavigationBarVC
 

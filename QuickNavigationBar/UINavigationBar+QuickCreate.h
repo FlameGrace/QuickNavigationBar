@@ -19,8 +19,5 @@
 
 + (UIButton *)buttonWithImage:(UIImage *)image target:(id)target action:(SEL)action;
 
-+ (UIBarButtonItem *)itemWithTitle:(NSString *)title titleColor:(UIColor *)titleColor target:(id)target action:(SEL)action;
-
-+ (UIBarButtonItem *)itemWithImage:(UIImage *)image target:(id)target action:(SEL)action;
 
 @end

@@ -22,6 +22,12 @@
 
 }
 
+- (void)viewWillAppear:(BOOL)animated
+{
+    [super viewWillAppear:animated];
+    [UIApplication sharedApplication].statusBarStyle = UIStatusBarStyleDefault;
+}
+
 
 - (void)delete
 {
@@ -35,8 +41,8 @@
 
 - (void)layoutNavigationBar
 {
-    self.navigationBar.navigationItem.leftBarButtonItem = [UINavigationBar itemWithTitle:@"返回" titleColor:nil target:self action:@selector(delete)];
-    self.navigationBar.navigationItem.rightBarButtonItem = [UINavigationBar itemWithTitle:@"下一页" titleColor:nil target:self action:@selector(next)];
+    [self.navigationBar pushLeftItem:[UINavigationBar buttonWithTitle:@"返回" titleColor:nil target:self action:@selector(delete)]];
+    [self.navigationBar pushRightItem:[UINavigationBar buttonWithTitle:@"下一页" titleColor:nil target:self action:@selector(next)]];
     [self.navigationBar configTitle:@"我的" titleColor:[UIColor redColor] font:nil];
     self.navigationBar.underLine = [UINavigationBar underline:[UIColor redColor]];
 }

@@ -53,18 +53,5 @@
     return back;
 }
 
-+ (UIBarButtonItem *)itemWithTitle:(NSString *)title titleColor:(UIColor *)titleColor target:(id)target action:(SEL)action
-{
-    UIButton *button = [self buttonWithTitle:title titleColor:(UIColor *)titleColor target:target action:action];
-    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:button];
-    return item;
-}
-
-+ (UIBarButtonItem *)itemWithImage:(UIImage *)image target:(id)target action:(SEL)action
-{
-    UIButton *button = [self buttonWithImage:image target:target action:action];
-    UIBarButtonItem *item = [[UIBarButtonItem alloc]initWithCustomView:button];
-    return item;
-}
 
 @end
