@@ -24,7 +24,6 @@
 + (UIButton *)buttonWithTitle:(NSString *)title titleColor:(UIColor *)titleColor target:(id)target action:(SEL)action
 {
     UIButton *back = [UIButton buttonWithType:UIButtonTypeCustom];
-    [back setFrame:CGRectMake(0,0, 44*2, 44)];
     [back setTitle:title forState:UIControlStateNormal];
     if(!titleColor)
     {
@@ -38,7 +37,6 @@
 + (UIButton *)buttonWithAttributeTitle:(NSAttributedString *)attributeTitle target:(id)target action:(SEL)action
 {
     UIButton *back = [UIButton buttonWithType:UIButtonTypeCustom];
-    [back setFrame:CGRectMake(0,0, 44*2, 44)];
     [back setAttributedTitle:attributeTitle forState:UIControlStateNormal];
     [back addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     return back;
@@ -47,7 +45,6 @@
 + (UIButton *)buttonWithImage:(UIImage *)image target:(id)target action:(SEL)action
 {
     UIButton *back = [UIButton buttonWithType:UIButtonTypeCustom];
-    [back setFrame:CGRectMake(0,0, 44, 44)];
     [back setImage:image forState:UIControlStateNormal];
     [back addTarget:target action:action forControlEvents:UIControlEventTouchUpInside];
     return back;

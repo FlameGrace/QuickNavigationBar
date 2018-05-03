@@ -35,9 +35,8 @@
     if(!_navigationBar)
     {
         CGRect bounds =  [UIScreen mainScreen].bounds;
-        QuickNavigationBar *navigationBar = [[QuickNavigationBar alloc]initWithFrame:CGRectMake(0, 0, bounds.size.width, 64)];
-        [self.view addSubview:navigationBar];
-        _navigationBar = navigationBar;
+        _navigationBar = [[QuickNavigationBar alloc]initWithFrame:CGRectMake(0, 0, bounds.size.width, 64)];
+        [self.view addSubview:_navigationBar];
     }
     return _navigationBar;
 }

@@ -1,9 +1,8 @@
 //
-//  CustomNavigationBar.h
-//  leapmotor
+//  QuickNavigationBar.h
 //
-//  Created by 李嘉军 on 16/8/15.
-//  Copyright © 2016年 Leapmotor. All rights reserved.
+//  Created by Flame Grace on 16/8/15.
+//  Copyright © 2016年 com.flamegrace. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -22,4 +21,3 @@
 - (UILabel *)configTitle:(NSString *)title titleColor:(UIColor *)titleColor font:(UIFont *)font;
 
 @end
-

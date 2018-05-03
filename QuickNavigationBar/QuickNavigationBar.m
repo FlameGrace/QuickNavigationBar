@@ -1,9 +1,8 @@
 //
-//  CustomNavigationBar.m
-//  leapmotor
+//  QuickNavigationBar.m
 //
-//  Created by 李嘉军 on 16/8/15.
-//  Copyright © 2016年 Leapmotor. All rights reserved.
+//  Created by Flame Grace on 16/8/15.
+//  Copyright © 2016年 com.flamegrace. All rights reserved.
 //
 
 #import "QuickNavigationBar.h"
@@ -65,20 +64,17 @@
         [self.leftView addSubview:_leftItem];
         _leftItem.translatesAutoresizingMaskIntoConstraints = NO;
         [self addConstraint:[NSLayoutConstraint constraintWithItem:_leftItem attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.leftView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:10.0]];
-        [self addConstraint:[NSLayoutConstraint constraintWithItem:_leftItem attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.leftView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_leftItem attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.leftView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0]];
         CGFloat width = _leftItem.frame.size.width;
         CGFloat height = _leftItem.frame.size.height;
-        if(width<44)
+        if(width >0)
         {
-            width = 44;
+            [self addConstraint:[NSLayoutConstraint constraintWithItem:_leftItem attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:width]];
         }
-        if(height<44)
+        if(height >0)
         {
-            height = 44;
+            [self addConstraint:[NSLayoutConstraint constraintWithItem:_leftItem attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:height]];
         }
-        ;
-        [self addConstraint:[NSLayoutConstraint constraintWithItem:_leftItem attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:width]];
-        [self addConstraint:[NSLayoutConstraint constraintWithItem:_leftItem attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:height]];
         if(_underLine)
         {
             [self bringSubviewToFront:_underLine];
@@ -104,20 +100,17 @@
         [self.rightView addSubview:_rightItem];
         _rightItem.translatesAutoresizingMaskIntoConstraints = NO;
         [self addConstraint:[NSLayoutConstraint constraintWithItem:_rightItem attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.rightView attribute:NSLayoutAttributeRight multiplier:1.0 constant:-10.0]];
-        [self addConstraint:[NSLayoutConstraint constraintWithItem:_rightItem attribute:NSLayoutAttributeBottom relatedBy:NSLayoutRelationEqual toItem:self.rightView attribute:NSLayoutAttributeBottom multiplier:1.0 constant:0.0]];
+        [self addConstraint:[NSLayoutConstraint constraintWithItem:_rightItem attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.rightView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0]];
         CGFloat width = _rightItem.frame.size.width;
         CGFloat height = _rightItem.frame.size.height;
-        if(width<44)
+        if(width >0)
         {
-            width = 44;
+            [self addConstraint:[NSLayoutConstraint constraintWithItem:_rightItem attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:width]];
         }
-        if(height<44)
+        if(height >0)
         {
-            height = 44;
+            [self addConstraint:[NSLayoutConstraint constraintWithItem:_rightItem attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:height]];
         }
-        ;
-        [self addConstraint:[NSLayoutConstraint constraintWithItem:_rightItem attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:width]];
-        [self addConstraint:[NSLayoutConstraint constraintWithItem:_rightItem attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:height]];
         if(_underLine)
         {
             [self bringSubviewToFront:_underLine];
@@ -216,8 +209,8 @@
     UILabel *label = [[UILabel alloc]init];
     label.text = title;
     label.font = font;
-    label.frame = CGRectMake(0, 0, 120.0, 30.0);
     label.textColor = titleColor;
+    [label sizeToFit];
     label.textAlignment = NSTextAlignmentCenter;
     self.titleView = label;
     return label;

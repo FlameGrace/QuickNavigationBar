@@ -29,7 +29,12 @@
 }
 
 
-- (void)delete
+- (void)qq
+{
+    
+}
+
+- (void)back
 {
     
 }
@@ -41,10 +46,36 @@
 
 - (void)layoutNavigationBar
 {
-    [self.navigationBar pushLeftItem:[UINavigationBar buttonWithTitle:@"返回" titleColor:nil target:self action:@selector(delete)]];
-    [self.navigationBar pushRightItem:[UINavigationBar buttonWithTitle:@"下一页" titleColor:nil target:self action:@selector(next)]];
-    [self.navigationBar configTitle:@"我的" titleColor:[UIColor redColor] font:nil];
+    [self.navigationBar configTitle:@"Mine" titleColor:[UIColor redColor] font:nil];
     self.navigationBar.underLine = [UINavigationBar underline:[UIColor redColor]];
+    [self pushLeftAddButton];
+    [self pushRightImage];
 }
+
+- (void)pushRightImage
+{
+    UIButton *btn = [UINavigationBar buttonWithImage:[UIImage imageNamed:@"qq"] target:self action:@selector(qq)];
+    btn.frame = CGRectMake(0, 0, 40, 40);
+    [self.navigationBar pushRightItem:btn];
+}
+
+- (void)pushLeftButton
+{
+    [self.navigationBar pushLeftItem:[UINavigationBar buttonWithTitle:@"Back" titleColor:nil target:self action:@selector(back)]];
+}
+
+- (void)pushRightButton
+{
+    [self.navigationBar pushRightItem:[UINavigationBar buttonWithTitle:@"Next" titleColor:nil target:self action:@selector(next)]];
+}
+
+- (void)pushLeftAddButton
+{
+    [self pushLeftButton];
+    UIButton *btn = [UINavigationBar buttonWithImage:[UIImage imageNamed:@"qq"] target:self action:@selector(qq)];
+    btn.frame = CGRectMake(60, 44/2 - 40/2, 40, 40);
+    [self.navigationBar.leftView addSubview:btn];
+}
+
 
 @end
