@@ -55,6 +55,7 @@
         [_leftItem removeFromSuperview];
     }
     _leftItem = leftItem;
+    [_leftItem sizeToFit];
     if(_leftItem)
     {
         if(!self.leftView)
@@ -65,16 +66,6 @@
         _leftItem.translatesAutoresizingMaskIntoConstraints = NO;
         [self addConstraint:[NSLayoutConstraint constraintWithItem:_leftItem attribute:NSLayoutAttributeLeft relatedBy:NSLayoutRelationEqual toItem:self.leftView attribute:NSLayoutAttributeLeft multiplier:1.0 constant:10.0]];
         [self addConstraint:[NSLayoutConstraint constraintWithItem:_leftItem attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.leftView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0]];
-        CGFloat width = _leftItem.frame.size.width;
-        CGFloat height = _leftItem.frame.size.height;
-        if(width >0)
-        {
-            [self addConstraint:[NSLayoutConstraint constraintWithItem:_leftItem attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:width]];
-        }
-        if(height >0)
-        {
-            [self addConstraint:[NSLayoutConstraint constraintWithItem:_leftItem attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:height]];
-        }
         if(_underLine)
         {
             [self bringSubviewToFront:_underLine];
@@ -91,6 +82,7 @@
         [_rightItem removeFromSuperview];
     }
     _rightItem = rightItem;
+    [_rightItem sizeToFit];
     if(_rightItem)
     {
         if(!self.rightView)
@@ -101,16 +93,6 @@
         _rightItem.translatesAutoresizingMaskIntoConstraints = NO;
         [self addConstraint:[NSLayoutConstraint constraintWithItem:_rightItem attribute:NSLayoutAttributeRight relatedBy:NSLayoutRelationEqual toItem:self.rightView attribute:NSLayoutAttributeRight multiplier:1.0 constant:-10.0]];
         [self addConstraint:[NSLayoutConstraint constraintWithItem:_rightItem attribute:NSLayoutAttributeCenterY relatedBy:NSLayoutRelationEqual toItem:self.rightView attribute:NSLayoutAttributeCenterY multiplier:1.0 constant:0.0]];
-        CGFloat width = _rightItem.frame.size.width;
-        CGFloat height = _rightItem.frame.size.height;
-        if(width >0)
-        {
-            [self addConstraint:[NSLayoutConstraint constraintWithItem:_rightItem attribute:NSLayoutAttributeWidth relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:width]];
-        }
-        if(height >0)
-        {
-            [self addConstraint:[NSLayoutConstraint constraintWithItem:_rightItem attribute:NSLayoutAttributeHeight relatedBy:NSLayoutRelationEqual toItem:nil attribute:NSLayoutAttributeNotAnAttribute multiplier:1.0 constant:height]];
-        }
         if(_underLine)
         {
             [self bringSubviewToFront:_underLine];
